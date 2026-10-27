@@ -1,0 +1,6 @@
+{
+  "name": "ডিএন বাংলা ফটোকার্ড ইঞ্জিন ও রিপোর্টার পোর্টাল",
+  "description": "ডিএন বাংলা ১৯২০x১৯২০ ফটোকার্ড জেনারেটর, রিপোর্টার অডিট ট্র্যাকার, লোকাল এড ম্যানেজার ও মাল্টি-রোল কন্ট্রোল সিস্টেম।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="bn" class="dark">
+  <head>
+    <!-- Global window.fetch shim: provides getter and setter so devtools/extensions/iframes never throw TypeError: Cannot set property fetch of #<Window> which has only a getter -->
+    <script>
+      (function() {
+        try {
+          var _globalFetch = window.fetch;
+          var desc = {
+            get: function() {
+              return _globalFetch;
+            },
+            set: function(fn) {
+              _globalFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          };
+          try {
+            Object.defineProperty(window, 'fetch', desc);
+          } catch (e1) {}
+          try {
+            if (typeof Window !== 'undefined' && Window.prototype) {
+              Object.defineProperty(Window.prototype, 'fetch', desc);
+            }
+          } catch (e2) {}
+        } catch (e) {
+          console.warn('Fetch property shim notice:', e);
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ডিএন বাংলা ফটোকার্ড ইঞ্জিন ও রিপোর্টার পোর্টাল</title>
+    <meta name="description" content="ডিএন বাংলা ১৯২০x১৯২০ ফটোকার্ড জেনারেটর, রিপোর্টার অডিট ট্র্যাকার, লোকাল এড ম্যানেজার ও মাল্টি-রোল কন্ট্রোল সিস্টেম।" />
+    <meta property="og:title" content="ডিএন বাংলা ফটোকার্ড ইঞ্জিন ও রিপোর্টার পোর্টাল" />
+    <meta property="og:description" content="ডিএন বাংলা ১৯২০x১৯২০ ফটোকার্ড জেনারেটর, রিপোর্টার অডিট ট্র্যাকার, লোকাল এড ম্যানেজার ও মাল্টি-রোল কন্ট্রোল সিস্টেম।" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Tiro+Bangla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-red-600 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
